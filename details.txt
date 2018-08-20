@@ -1,0 +1,125 @@
+@db {
+
+    user{
+        username ,
+        email,
+        password,
+        full_name,
+        phone_number,
+        gender,
+        profession,
+        city,
+        region,
+        landmark,
+        address,
+        lat,
+        lng
+    }
+
+    otp {
+        phone_number
+        otp
+        created_at
+        is_used
+        status
+        expired_at
+    }
+
+    profession {
+        name,
+    }
+
+    landmark {
+        lat,
+        lng,
+        name,
+        city_id,
+        region_id,
+        country_id
+    }
+
+    city {
+        lat,
+        lng,
+        name,
+        region_id,
+        country_id
+    }
+
+    region {
+        name,
+        country_id
+    }
+
+    country {
+        code
+        name
+    }
+
+    user_favorites {
+        user_id,
+        favorite_user_id
+    }
+
+
+    dating_invitation {
+        message,
+        created_at,
+        meeting_point_lat,
+        meeting_point_lng,
+        send_from,
+        send_to,
+        status,
+    }
+
+    user_notification {
+
+        notification_meesage,
+        notification_for: [chat, invitation]
+        notification_for_id,
+        status [read,unread],
+    }
+
+
+    
+
+
+
+
+}
+
+@admin-sections {
+
+    - user management
+    - country management
+    - city management
+    - region management
+    - landmark management
+}
+
+@helps {
+
+    facebook api example need to make 
+    https://codeburst.io/node-js-rest-api-facebook-login-121114ee04d8
+    https://www.npmjs.com/package/angular-6-social-login
+
+
+}
+
+@swagger {
+    npm i -g swagger
+    swagger project edit
+    npm install -g grunt-cli
+
+    http://localhost:4009/apiDocs/
+}
+
+@questions {
+
+    - why ?
+        match:[mongoose.Schema.Types.ObjectId],
+        no_liked:[mongoose.Schema.Types.ObjectId],
+    
+}
+
+
