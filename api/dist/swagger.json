@@ -1,11 +1,11 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Chat Bot",
+        "title": "Pluto",
         "version": "1.0.0"
     },
     "host": "localhost:4009",
-    "basePath": "/chat_bot/api/v1",
+    "basePath": "/pluto/api/v1",
     "consumes": [
         "application/json",
         "application/x-www-form-urlencoded"
