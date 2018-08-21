@@ -27,6 +27,7 @@ config.dbConfig(config.cfg, (err) => {
 
     // config express
     config.expressConfig(app, config.cfg.environment);
+    if(err)return res.json(err)
 
     // attach the routes to the app
     require("./lib/route")(app);
