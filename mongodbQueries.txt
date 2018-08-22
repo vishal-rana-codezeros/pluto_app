@@ -1,0 +1,39 @@
+
+Query to find the user near you-----
+
+vishal
+22
+male
+female
+18 - 25
+0-10
+location :[72.524332 , 23.038959 ]
+
+
+db.user.aggregate( [
+   {
+      $geoNear: {
+        "near":{
+            "type": "Point",
+            "coordinates": [ 72.524332 , 23.038959 ]
+        },
+         spherical: true,
+         query: {
+         "profileSetting.gender":"MALE",
+         "age":{$gte:18},
+         "age":{$lte:25},
+         "isActive":1,
+         disLike:{
+          $nin:['5b7bf7b83c225c66077c86ee']
+         }
+         },
+         distanceField: "calcDistance",
+         includeLocs: "calcDistance",
+         $maxDistance:10000
+      }
+   }
+] )
+
+
+
+-------------------------------------------------------------------------------
